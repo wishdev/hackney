@@ -88,7 +88,7 @@ perform(Client0, {Method0, Path, Headers0, Body0}) ->
     end,
 
     HeadersData = iolist_to_binary([
-                << Method/binary, " ", Path/binary, " HTTP/1.1", "\r\n" >>,
+                << Method/binary, " ", Path/binary, " HTTP/1.0", "\r\n" >>,
                 hackney_headers:to_binary(HeaderDict1)]),
 
     PerformAll = proplists:get_value(perform_all, Options, true),
